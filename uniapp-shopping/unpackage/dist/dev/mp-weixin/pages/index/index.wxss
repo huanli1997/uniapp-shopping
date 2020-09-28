@@ -1,11 +1,9 @@
 .indexContainer .header {
   display: -webkit-box;
   display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-      -ms-flex-align: center;
           align-items: center;
   margin-top: 20rpx;
 }
@@ -14,14 +12,14 @@
   height: 40rpx;
   margin: 0 20rpx;
   -webkit-flex-shrink: 0;
-      -ms-flex-negative: 0;
           flex-shrink: 0;
 }
 .indexContainer .header .search {
   position: relative;
   height: 60rpx;
   background: #ededed;
-  border-radius: 10rpx;
+  -webkit-border-radius: 10rpx;
+          border-radius: 10rpx;
   padding-left: 60rpx;
 }
 .indexContainer .header .search .placeholder {
@@ -39,7 +37,6 @@
 }
 .indexContainer .header .btn {
   -webkit-flex-shrink: 0;
-      -ms-flex-negative: 0;
           flex-shrink: 0;
   margin: 0 20rpx;
   width: 144ipx;
@@ -65,5 +62,15 @@
 }
 .indexContainer .navScroll .navItem.active {
   border-bottom: 2rpx solid #bb2c08;
+}
+.indexContainer .contentScroll {
+/*	
+			tabbar 和top栏 在H5端是div模拟的，属于前端屏幕窗口的一部分，
+			如果要使用bottom居底定位方式，应该使用css变量--window-bottom，
+			var(--window-bottom) 在h5端值为50px，在小程序端没有值
+			比如悬浮在tabbar上方10px的按钮，样式如下bottom: calc(var(--window-bottom) + 10px)
+			
+		*/
+  height: calc(100vh - 60rpx - 80rpx - 0px - 0px);
 }
 

@@ -29,6 +29,12 @@ router.get('/getIndexData',(ctx,next)=>{
 	ctx.body=indexData
 })
 
+// 用于返回首分类页面数据
+const indexCateListData = require("./datas/indexCateList.json")
+router.get('/getindexCateList',(ctx,next)=>{
+	ctx.body=indexCateListData
+})
+
 // 2.运行并监听服务器
 app.listen(3002, (error) => {
 	if (error) {
